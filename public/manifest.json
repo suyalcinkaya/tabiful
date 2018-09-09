@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "version": "1.0.0",
+  "name": "Tabiful",
+  "description": "An open source tab manager for Chrome",
+  "author": "Onur Suyalcinkaya <onursuyalcinkaya@gmail.com> (http://suyalcinkaya.github.io)",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+K"
+      }
+    }
+  },
+  "browser_action": {
+    "default_popup": "index.html",
+  },
+  "permissions": ["tabs"]
+}
