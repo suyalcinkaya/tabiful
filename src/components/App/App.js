@@ -17,8 +17,8 @@ const AppContainer = styled.div`
 const Input = styled.input.attrs({
   type: "text", 
   placeholder: "Jump to..", 
-  spellcheck: "false", 
-  autoFocus: "true",
+  spellCheck: false, 
+  autoFocus: true,
 })`
   width: 100%;
   font-size: 20px;
@@ -52,6 +52,11 @@ const TabContainer = styled.div`
   border-radius: 3px;
   -webkit-transition: 0.1s;
   transition: 0.1s;
+
+  ${({ selected }) => selected && `
+    background-color: #4ada99;
+    color: #fff;
+  `}
 
   &:hover {
     background-color: #4ada99;
@@ -206,7 +211,7 @@ class App extends Component {
             tabs.length > 0 
             ? tabs.map(tab => 
               ( 
-              <TabContainer onClick={() => {this.handleTabSelect(tab)}} onKeyPress={() => {this.handleKeyPress}}>
+              <TabContainer selected={tab.selected} onClick={() => {this.handleTabSelect(tab)}} onKeyPress={() => {this.handleKeyPress}}>
                 <FavIcon>
                   {
                     /^https?:\/\//.test(tab.favIconUrl) 
