@@ -1,5 +1,5 @@
 # Tabiful
-An open source tab manager extension for Chrome written in React.
+An open source minimal and clean tab manager extension for Chrome.
 
 ## Contributing
 
