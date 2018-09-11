@@ -61,7 +61,7 @@ const favIconPlaceholder = (
 );
 
 const Title = styled.span`
-  font-size: 14px;
+  font-size: 13px;
   line-height: 40px;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -99,7 +99,7 @@ const CloseIcon = styled.svg.attrs({
 function Tab({ tab, isHighlighted, onRemove, ...props }) {
   console.log('tab index: ' + tab.index + ', isHighlighted: ' + isHighlighted);
   return (
-    <TabContainer isHighlighted={isHighlighted} {...props}>
+    <TabContainer isHighlighted={isHighlighted} title={tab.url} {...props}>
       <FavIcon>
         {/^https?:\/\//.test(tab.favIconUrl) ? (
           <img src={tab.favIconUrl} alt="" width="100%" height="100%" />
@@ -107,7 +107,11 @@ function Tab({ tab, isHighlighted, onRemove, ...props }) {
             favIconPlaceholder
           )}
       </FavIcon>
-      <Title>{tab.title}</Title>
+      <Title>
+        <span>{tab.title}</span>
+        <span>  —  </span>
+        <span style={{ fontStyle: 'italic' }}>{tab.url}</span>
+      </Title>
       <CloseIcon
         isHighlighted={isHighlighted}
         onClick={event => {

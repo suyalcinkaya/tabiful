@@ -10,7 +10,7 @@ import Tab from './Tab';
 
 const AppContainer = styled.div`
   display: flex;
-  width: 400px;
+  width: 600px;
   max-height: 600px;
   color: rgba(0, 0, 0, 0.8);
   flex-direction: column;

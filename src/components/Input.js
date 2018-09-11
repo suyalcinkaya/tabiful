@@ -20,7 +20,7 @@ const InputItem = styled.input.attrs({
   autoFocus: "true",
 })`
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.8);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 0px;
